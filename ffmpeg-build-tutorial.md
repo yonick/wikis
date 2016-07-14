@@ -5,7 +5,7 @@
 git clone https://git.videolan.org/git/x264.git
 
 #### compiling code
-cd x264 && ./configure --prefix=$HOME/ffmpeg-build && make && make install
+cd x264 && ./configure --prefix=$HOME/ffmpeg-build --enable-static --enable-shared && make && make install
 
 
 
@@ -26,7 +26,9 @@ cmake -D CMAKE_INSTALL_PREFIX="$HOME/ffmpeg-build"
 #### getting code
 git clone git://github.com/mstorsjo/fdk-aac.git
 #### compiling code
-cd fdk-aac && ./configure --prefix=$HOME/ffmpeg-build && make && make install
+cd fdk-aac && autoreconf -fiv
+
+./configure --prefix=$HOME/ffmpeg-build && make && make install
 
 
 
@@ -34,7 +36,7 @@ cd fdk-aac && ./configure --prefix=$HOME/ffmpeg-build && make && make install
 #### getting code
 git clone https://github.com/lu-zero/mfx_dispatch.git
 #### compiling code
-cd mfx_dispatch && autoreconf && ./configure --prefix=$HOME/ffmpeg-build && make && make install
+cd mfx_dispatch && autoreconf -i && ./configure --prefix=$HOME/ffmpeg-build && make && make install
 
 
 
@@ -42,7 +44,7 @@ cd mfx_dispatch && autoreconf && ./configure --prefix=$HOME/ffmpeg-build && make
 #### getting code
 git clone -b openh264v1.5.1 https://github.com/cisco/openh264.git
 #### compiling code
-cd build
+cd openh264/build
 
 vim platform-mingw_nt.mk // x86_64-w64-mingw32-ar --> x86_64-w64-mingw32-gcc-ar
 
@@ -88,6 +90,6 @@ git clone https://git.ffmpeg.org/ffmpeg.git
 #### compiling code
 cd ffmpeg
 
-PKG_CONFIG_PATH=$HOME/ffmpeg-build/lib/pkg-config ./configure --prefix=/home/liuml/ffmpeg-build --enable-small --disable-debug --disable-doc --arch=x86_64 --enable-cross-compile --target-os=mingw32 --enable-libvidstab --enable-libfdk-aac --enable-libx264 --enable-libx265 --enable-libmfx --enable-libopenh264 --enable-libvpx --enable-opencl --extra-cflags=-I/home/liuml/ffmpeg-build/include --extra-ldflags=-L/home/liuml/ffmpeg-build/lib --disable-static --enable-shared --enable-version3 --enable-gpl --enable-nonfree
+PKG_CONFIG_PATH=$HOME/ffmpeg-build/lib/pkgconfig ./configure --prefix=$HOME/ffmpeg-build --enable-small --disable-debug --disable-doc --arch=x86_64 --enable-cross-compile --target-os=mingw32 --enable-libvidstab --enable-libfdk-aac --enable-libx264 --enable-libx265 --enable-libmfx --enable-libopenh264 --enable-libvpx --enable-opencl --extra-cflags=-I$HOME/ffmpeg-build/include --extra-ldflags=-L$HOME/ffmpeg-build/lib --disable-static --enable-shared --enable-version3 --enable-gpl --enable-nonfree
 
 
