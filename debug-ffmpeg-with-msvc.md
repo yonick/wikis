@@ -19,7 +19,7 @@ msys2_shell.cmd -mingw64 -full-path
 ## 2. compile static libs
 ### 2.1 libx264
 git clone https://git.videolan.org/git/x264.git  
-cd x264 && CC=cl ./configure  --enable-static  --prefix=$HOME/ffmpeg-build && make && make install  
+cd x264 && CC=cl ./configure  --enable-static  --prefix=$HOME/ffmpeg-build --extra-cflags="-DNO_PREFIX" && make && make install  
 ### 2.2 ffmpeg
 git clone https://git.ffmpeg.org/ffmpeg.git  
 cd ffmpeg  
