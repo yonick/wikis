@@ -46,7 +46,7 @@ FIND_PACKAGE_HANDLE_STANDARD_ARGS(Folly
 ```
 #### Modify CMakeList.txt:
 ```sh
-set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/ “./”)
+set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/ "./")
 ```
 #### cmake && make:
 ```sh
