@@ -3,8 +3,9 @@
 ### Build folly
 ```sh
 > git clone https://github.com/facebook/folly.git
-> cd folly
-> ./confiure --prefix=/home/matt/usrsdk --disable-shared
+> cd folly/folly
+> autoreconf -ivf
+> ./configure --prefix=/home/matt/usrsdk --disable-shared
 > make && make install
 ```
 
