@@ -60,12 +60,14 @@ cmake -D CMAKE_INSTALL_PREFIX="$HOME/ffmpeg-build"
 ```sh
 x86_64-w64-mingw32-ar --> x86_64-w64-mingw32-gcc-ar
 ```
+#### 2. Modify openh264/Makefile
+```sh
+PREFIX=$HOME/ffmpeg-build
+```
 #### 3. Compile
 ```sh
 > make && make install
 ```
-#### 4. Copy the header&libs to $HOME/ffmpeg-build, modify pkg-config
-
 ## libvpx
 #### 1. Get the code
 ```sh
