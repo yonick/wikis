@@ -76,7 +76,7 @@ PREFIX=$HOME/ffmpeg-build
 #### 2. Compile
 ```sh
 > cd libvpx
-> ./configure --prefix=$HOME/ffmpeg-build
+> ./configure --prefix=$HOME/ffmpeg-build --enable-shared
 > make && make install
 ```
 ## vid.stab
