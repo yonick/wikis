@@ -1,6 +1,6 @@
-# FFMPEG  Building Tutorial
-
-## libx264
+# FFMPEG Building Tutorial
+---
+### `libx264`
 #### 1. Get the code
 ```sh
 > git clone https://git.videolan.org/git/x264.git
@@ -12,7 +12,7 @@
 > ./configure --prefix=$HOME/ffmpeg-build --enable-static --enable-shared
 > make && make install
 ```
-## libx265
+### `libx265`
 #### 1. Get the code
 ```sh
 > git clone https://github.com/videolan/x265.git
@@ -30,7 +30,7 @@ cmake -D CMAKE_INSTALL_PREFIX="$HOME/ffmpeg-build"
 > ./make-Makefiles.sh && make
 ```
 
-## fdk-aac
+### `fdk-aac`
 #### 1. Get the code
 ```sh
 > git clone git://github.com/mstorsjo/fdk-aac.git
@@ -40,7 +40,7 @@ cmake -D CMAKE_INSTALL_PREFIX="$HOME/ffmpeg-build"
 > cd fdk-aac && autoreconf -fiv
 >./configure --prefix=$HOME/ffmpeg-build && make && make install
 ```
-## libmfx
+### `libmfx`
 #### 1. Get the code
 ```sh
 > git clone https://github.com/lu-zero/mfx_dispatch.git
@@ -51,7 +51,7 @@ cmake -D CMAKE_INSTALL_PREFIX="$HOME/ffmpeg-build"
 > ./configure --prefix=$HOME/ffmpeg-build
 > make && make install
 ```
-## openh264
+### `openh264`
 #### 1. Get the code
 ```sh
 > git clone -b openh264v1.5.1 https://github.com/cisco/openh264.git
@@ -60,15 +60,15 @@ cmake -D CMAKE_INSTALL_PREFIX="$HOME/ffmpeg-build"
 ```sh
 x86_64-w64-mingw32-ar --> x86_64-w64-mingw32-gcc-ar
 ```
-#### 2. Modify openh264/Makefile
+#### 3. Modify openh264/Makefile
 ```sh
 PREFIX=$HOME/ffmpeg-build
 ```
-#### 3. Compile
+#### 4. Compile
 ```sh
 > make && make install
 ```
-## libvpx
+### `libvpx`
 #### 1. Get the code
 ```sh
 > git clone https://github.com/webmproject/libvpx
@@ -79,7 +79,7 @@ PREFIX=$HOME/ffmpeg-build
 > ./configure --prefix=$HOME/ffmpeg-build --enable-shared
 > make && make install
 ```
-## vid.stab
+### `vid.stab`
 #### 1. Get the code
 ```sh
 > git clone https://github.com/georgmartius/vid.stab.git
@@ -90,7 +90,7 @@ PREFIX=$HOME/ffmpeg-build
 > ./configure --prefix=$HOME/ffmpeg-build
 > make && make install
 ```
-## opencl
+### `opencl`
 #### 1. Get the sdk
 ```sh
 > wget http://registrationcenter-download.intel.com/akdlm/irc_nas/9302/intel_sdk_for_opencl_setup_6.1.0.1600.exe
@@ -103,7 +103,7 @@ PREFIX=$HOME/ffmpeg-build
 ```
 #### 3. Copy libopencl.lib and headers to $HOME/ffmpeg-build
 
-## ffmpeg
+### `ffmpeg`
 #### 1. Get the code
 ```sh
 > git clone https://git.ffmpeg.org/ffmpeg.git
