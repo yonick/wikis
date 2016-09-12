@@ -23,7 +23,7 @@
 ```
 #### 3. Modify make-Makefiles.sh
 ```sh
-cmake -D CMAKE_INSTALL_PREFIX="$HOME/ffmpeg-build"
+cmake -G "MSYS Makefiles" -D CMAKE_INSTALL_PREFIX=$HOME/ffmpeg-build ../../source
 ```
 #### 4. Compile
 ```sh
@@ -87,7 +87,8 @@ PREFIX=$HOME/ffmpeg-build
 #### 2. Compile
 ```sh
 > cd vid.stab
-> ./configure --prefix=$HOME/ffmpeg-build
+> mkdir build && cd build
+> cmake -G "MSYS Makefiles" -D CMAKE_INSTALL_PREFIX=$HOME/ffmpeg-build ..
 > make && make install
 ```
 ### `opencl`
